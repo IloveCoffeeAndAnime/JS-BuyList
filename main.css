@@ -1,3 +1,136 @@
+body{
+}
 h1 {
     color: red;
+}.leftSide{
+    width: 60%;
+    margin: auto;
+    max-width: 600px;
+    float:left;
+    background-color: aquamarine;
+    height: auto;
+
+}
+.rightSide{
+    width:40%;
+    margin: auto;
+    display:inline-block;
+    max-width: 400px;
+    background-color: darkcyan;
+    height:30px;
+}
+#newGoodDiv{
+    height:35px;
+}
+
+#buttonAdd{
+    width:18%;
+    height:105%;
+    background-color:blue;
+    color:white;
+    font-family: "Arial Black";
+
+}
+#inputAddGood{
+    width:80%;
+    height:100%;
+    padding-left:5px;
+    color: gray;
+}
+.allAboutGood{
+    height:45px;
+    max-width: 600px;
+    margin-top:5%;
+    border-top:1px solid grey;
+}
+
+.leftSide .allAboutGood .goodName{
+    height:100%;
+    width:31%;
+    float:left;
+    max-width:200px;
+    padding:2%;
+    font-family: "Arial Narrow";
+    font-size: large;
+}
+
+.leftSide .allAboutGood .plusMinButtons{
+    width:31%;
+    height:100%;
+    max-width:200px;
+    padding-top: 2%;
+    display: inline-block;
+    background-color: steelblue;
+}
+.leftSide .allAboutGood .plusMinButtons button{
+    border-radius: 100%;
+    width: 20%;
+    height:80%;
+    font-weight: bold;
+}
+.leftSide .allAboutGood .plusMinButtons .plusButton{
+    background-color: limegreen;
+}
+.leftSide .allAboutGood .plusMinButtons .minusButton{
+    background-color: red;
+    margin-left: 30%;
+}
+
+.leftSide .allAboutGood .plusMinButtons .amount{
+    background-color: lightgray;
+    display: inline-block;
+    text-align: center ;
+    border-radius: 25%;
+    width:16%;
+    height:55%;
+    padding-top:3%;
+    font-weight: bold;
+
+}
+
+.leftSide .allAboutGood .buyDel{
+    display:inline-block;
+    width:31%;
+max-width:200px;
+
+}
+
+.leftSide .allAboutGood .buyDel .buy{
+    width:50%;
+    height:100%;
+    border-radius:15%;
+    margin-left:20%;
+    padding:5%;
+}
+
+.leftSide .allAboutGood .buyDel .delete{
+    border-radius: 25%;
+    width:20%;
+    height:55%;
+    padding:3%;
+    font-weight: bold;
+    background-color: red;
+    font-size: large;
+}
+
+.rightSideHeading{
+    font-size: large;
+    font-weight: bold;
+    font-family: "Arial Black";
+    border-bottom: 1px solid grey;
+}
+
+.rightSide div .leftGood{
+    border-radius: 20%;
+    background-color: grey;
+    padding:1%;
+    margin-top:3%;
+}
+.rightSide div .leftGood .amountOfLeft{
+    border-radius: 100%;
+    background-color: orange;
+    padding:1%;
+}
+.rightSide #soldGoodsDiv{
+
 }
