@@ -3,15 +3,15 @@ body{
     font-family: "Arial Narrow", sans-serif;
 }
 
-#all{
-    margin-top:5%;
+#leftRightSide{
+    margin: 5%;
     margin-left:10%;
 }
 .leftSide{
-    width: 60%;
+    width: 58%;
     margin-bottom:5px;
     max-width: 600px;
-    min-width: 330px;
+    min-width: 370px;
     float:left;
     background-color:white;
     height: auto;
@@ -21,7 +21,7 @@ body{
 }
 
 .rightSide{
-    width:40%;
+    width:37%;
     display:inline-block;
     max-width: 400px;
     min-width:330px;
@@ -29,21 +29,12 @@ body{
     height:30px;
 }
 @media screen and (max-width: 1200px) {
-    #all{
-        margin: 3%;
-        margin-top:5%;
-    }
-    .leftSide{
-       width:58%;
-        float:left;
-        max-width: none;
-    }
-    .rightSide{
-        width:37%;
-        max-width:none;
+    #leftRightSide {
+        margin-left: 5%;
     }
 }
-@media screen and (max-width: 920px){
+
+@media screen and (max-width: 940px){
     .leftSide{
         width:100%;
         max-width: none;
@@ -51,7 +42,8 @@ body{
     .rightSide{
         width:100%;
         max-width:none;
-        margin-left: auto;
+        min-width:370px;
+        margin-left: 0;
     }
 }
 #newGoodDiv{
@@ -88,6 +80,7 @@ body{
     max-width:200px;
     padding:2%;
     font-size: large;
+    overflow-x: auto;
 }
 
 .leftSide .allAboutGood .plusMinButtons{
@@ -174,6 +167,13 @@ body{
     height:25px;
     padding: 1% 1% 1% 2%;
     margin-bottom: 5px;
+
+}
+.rightSide .allSold .leftGood span{
+    display:inline-block;
+    max-width:70%;
+    overflow: hidden;
+    margin-top:3%;
 }
 .rightSide div .leftGood .amountOfLeft{
     display:inline-block;
@@ -191,4 +191,78 @@ body{
 .rightSide div{
     background-color: white;
     min-height:20px;
+}
+.badge{
+    width:200px;
+    height:250px;
+    background-color: purple;
+    font-family: Tahoma, serif;
+    text-align: center;
+    border-radius: 15% 15% 0 0;
+    color:white;
+    position:fixed;
+    left:25px;
+    bottom:-200px;
+    padding: 10px;
+    transition: all 3s ease;
+
+}
+.badge:hover {
+    background-color: darkblue;
+    transform: translateY(-200px);
+}
+
+.badge .smallLetters{
+    font-size: 20px;
+}
+.badge .bigLetters{
+    font-size: 32px;
+}
+.badge .boldLetters{
+    font-weight: bold;
+}
+
+@media print {
+    .badge{
+        background-color: white;
+        border: 1px solid purple;
+        color:black;
+    }
+    .badge .firstDiv{
+        display:none;
+    }
+}
+
+.badge .firstDiv{
+    margin-bottom: 25px;
+}
+
+button{
+    position:relative;
+}
+button:before{
+    content:attr(data-tooltip);
+    display:inline-block;
+    background-color: purple;
+    border-radius: 25px;
+    color:white;
+    text-align: center;
+    font-size:15px;
+    font-family: Tahoma, serif;
+    font-weight: 300;
+    width:0;
+    height:0;
+    padding:2px;
+    position:absolute;
+    left:50%;
+    visibility:hidden;
+    overflow:hidden;
+    transition:all 0.5s linear;
+}
+button:hover::before{
+    transform: translateY(-150%);
+    width:100px;
+    height:20px;
+    margin-left:-50px;
+    visibility: visible;
 }
