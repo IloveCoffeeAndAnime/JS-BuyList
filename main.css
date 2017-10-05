@@ -26,11 +26,15 @@ body{
     max-width: 400px;
     min-width:330px;
     margin-left:2%;
-    height:30px;
+    height:auto;
+    background-color: white;
 }
 @media screen and (max-width: 1200px) {
     #leftRightSide {
         margin-left: 5%;
+    }
+    .leftSide .allAboutGood{
+        max-width:none;
     }
 }
 
@@ -64,7 +68,7 @@ body{
     color: gray;
     box-sizing: border-box;
 }
-.leftSide .allAboutGood{
+ .allAboutGood{
     width:100%;
     height:45px;
     margin-left:2%;
@@ -73,7 +77,7 @@ body{
     border-top:1px solid lightgrey;
 }
 
-.leftSide .allAboutGood .goodName{
+ .allAboutGood .goodName{
     height:100%;
     width:31%;
     float:left;
@@ -83,16 +87,16 @@ body{
     overflow-x: auto;
 }
 
-.leftSide .allAboutGood .plusMinButtons{
+ .allAboutGood .plusMinButtons{
     width:31%;
     height:100%;
-    padding-top: 2%;
-    margin-bottom: 15%;
+     margin-top:2%;
     display: inline-block;
+     box-sizing: border-box;
     background-color: white;
     text-align: center;
 }
-.leftSide .allAboutGood .plusMinButtons button{
+ .allAboutGood .plusMinButtons button{
     border-radius: 100%;
     width: 35px;
     height:35px;
@@ -100,11 +104,11 @@ body{
     color:white;
     font-size: large;
 }
-.leftSide .allAboutGood .plusMinButtons .plusButton{
+ .allAboutGood .plusMinButtons .plusButton{
     background-color: limegreen;
 }
-.leftSide .allAboutGood .plusMinButtons .minusButton{
-    background-color: red;
+ .allAboutGood .plusMinButtons .minusButton{
+    background-color: #ce201b;
 }
 
 .leftSide .allAboutGood .plusMinButtons .amount{
@@ -119,30 +123,31 @@ body{
 
 }
 
-.leftSide .allAboutGood .buyDel{
+ .allAboutGood .buyDel{
     display:inline-block;
     width:31%;
     max-width:200px;
     text-align: right;
 }
 
-.leftSide .allAboutGood .buyDel .buy{
+.allAboutGood .buyDel .buy{
     width:70px;
     height:35px;
     border-radius:15%;
     padding:5%
 }
 
-.leftSide .allAboutGood .buyDel .delete{
+.allAboutGood .buyDel .delete{
     border-radius: 25%;
     width:35px;
     height:35px;
     padding:3%;
     font-weight: bold;
-    background-color: red;
+    background-color: #ce201b;
     font-size: large;
     color:white;
     margin-right: 5px;
+    border:none;
 }
 
 .rightSideHeading{
@@ -153,45 +158,43 @@ body{
     padding: 5px;
 }
 
-.rightSide .allSold{
+.rightSide .allLeft,.allBought{
     padding-top:3%;
     padding-left:3%;
     border-bottom: 1px solid lightgrey;
 }
 
-.rightSide .allSold .leftGood{
+.goodInList{
     display:inline-block;
-    border-radius: 10%;
-    background-color: lightgrey;
+    border-radius:10px;
     width:25%;
     height:25px;
     padding: 1% 1% 1% 2%;
     margin-bottom: 5px;
-
+    margin-left:5px;
+    background-color: lightgrey;
 }
-.rightSide .allSold .leftGood span{
+
+.goodInList span{
     display:inline-block;
     max-width:70%;
     overflow: hidden;
     margin-top:3%;
 }
-.rightSide div .leftGood .amountOfLeft{
+.goodInList .number{
     display:inline-block;
     border-radius: 100%;
     background-color: orange;
     width:20px;
     height:15px;
     padding:2%;
+    padding-bottom:7px;
     float:right;
     text-align: center;
     font-weight: bold;
     color:white;
 }
 
-.rightSide div{
-    background-color: white;
-    min-height:20px;
-}
 .badge{
     width:200px;
     height:250px;
@@ -240,7 +243,7 @@ body{
 button{
     position:relative;
 }
-button:before{
+button::before{
     content:attr(data-tooltip);
     display:inline-block;
     background-color: purple;
@@ -266,3 +269,39 @@ button:hover::before{
     margin-left:-50px;
     visibility: visible;
 }
+
+.template,.templateRight{
+    display:none;
+}
+
+.allAboutGood .newName{
+    height:20px;
+    width:60%;
+    display:none;
+}
+
+.bought .buyDel .notBuy{
+    display:none;
+}
+
+.notBought div,.notBought .goodInListName{
+    text-decoration: line-through;
+}
+.notBought .buyDel button{
+    display:none;
+}
+
+.notBought .buyDel .notBuy{
+    width:70%;
+    height:35px;
+    border-radius:10px;
+    padding:2%;
+    display:inline-block;
+    margin-top:10px;
+    margin-right:10px;
+}
+
+.notBought .plusMinButtons button{
+    display:none;
+}
+
