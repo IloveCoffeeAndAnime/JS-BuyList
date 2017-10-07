@@ -13,11 +13,15 @@ $("#buttonAdd").click(function(){
 function addItem(title){
     var $node = $($ITEM);
     var $nodeInList =$($IT_IN_LIST);
+    var $nodeInListCopy=$($IT_IN_LIST);
 
     $node.find('.goodName').find('span').text(title);
     $node.css("display","block");
 
     $nodeInList.find('span').text(title);
+    $nodeInList.addClass('bought');
+    $nodeInListCopy.find('span').text(title);
+    $nodeInListCopy.addClass('notBought');
 
     var counterVal=1;
     var $counter = $node.find('.plusMinButtons').find('.amount');
@@ -51,12 +55,9 @@ function addItem(title){
     $node.find('.buyDel').find('.buy').click(function(){
         $node.fadeToggle(250,function(){
             $node.addClass('notBought').removeClass('bought');
+            $nodeInListCopy.fadeIn(250);
+            $nodeInList.fadeOut(250);
             $node.fadeToggle(250);
-        });
-        $nodeInList.fadeToggle(250,function(){
-            $nodeInList.addClass('notBought').removeClass('bought');
-            $RIGHT_SIDE.find('.allBought').append($nodeInList);
-            $nodeInList.fadeToggle(250);
         });
     });
 
@@ -64,13 +65,9 @@ function addItem(title){
         $node.fadeToggle(250,function(){
             $node.addClass('bought').removeClass('notBought');
             $node.fadeToggle(250);
+            $nodeInListCopy.fadeOut(250);
+            $nodeInList.fadeIn(250);
         });
-        $nodeInList.fadeToggle(250,function(){
-            $nodeInList.addClass('bought').removeClass('notBought');
-            $RIGHT_SIDE.find('.allLeft').append($nodeInList);
-            $nodeInList.fadeToggle(250);
-        });
-
     });
 
     $node.find('.buyDel').find('.delete').click(function(){
@@ -84,6 +81,7 @@ function addItem(title){
 
     $node.hide().appendTo($LEFT_SIDE).fadeIn();
     $nodeInList.hide().appendTo($RIGHT_SIDE.find('.allLeft')).fadeIn();
+    $nodeInListCopy.hide().appendTo($RIGHT_SIDE.find('.allBought'));
 }
 
 addItem('манга');
